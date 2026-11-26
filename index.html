@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex">
+<meta name="theme-color" content="#D3EBFF">
+<title>제주 2박 3일 가족 여행</title>
+<link href="https://fonts.googleapis.com/css2?family=Jua&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#F1F9FF; --card:#FFFFFF; --ink:#27384A; --muted:#566A7E; --line:#DCEAF5;
+  --sky:#D3EBFF; --sky-d:#2A78BC; --peach:#FFE3D3; --peach-d:#C9531F; --mint:#D5F5E7; --mint-d:#16795A;
+  --lemon:#FFF0B5; --lemon-d:#8A5F00; --lav:#E7DFFF; --lav-d:#5E43C4; --pink:#FFDDE8; --pink-d:#B93560;
+  --font-body:"Apple SD Gothic Neo","Noto Sans KR","Malgun Gothic",system-ui,sans-serif;
+  --font-cute:"Jua","Apple SD Gothic Neo","Noto Sans KR","Malgun Gothic",sans-serif;
+  color-scheme:light; box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme: dark){
+  :root{
+    --bg:#13202C; --card:#1C2D3B; --ink:#EBF3FA; --muted:#AABCCC; --line:#2B4153;
+    --sky:#1F3B54; --sky-d:#8CC8FF; --peach:#4A3226; --peach-d:#FFB48C; --mint:#1C4036; --mint-d:#8CE0C0;
+    --lemon:#4A4220; --lemon-d:#FFD966; --lav:#352F58; --lav-d:#C2B3FF; --pink:#4D2A39; --pink-d:#FF9DBB;
+    color-scheme:dark;
+  }
+}
+*,*::before,*::after{ box-sizing:inherit; }
+html{ scroll-behavior:smooth; scroll-padding-top:68px; }
+body{ margin:0; background:var(--bg); color:var(--ink); font-family:var(--font-body); font-size:17px; line-height:1.65; word-break:keep-all; overflow-wrap:break-word; -webkit-text-size-adjust:100%; }
+a{ color:var(--sky-d); text-underline-offset:3px; }
+.hero{ background:linear-gradient(135deg,var(--sky) 0%,var(--mint) 100%); padding:calc(22px + env(safe-area-inset-top,0px)) 18px 26px; text-align:center; border-radius:0 0 30px 30px; }
+.hero h1{ font-family:var(--font-cute); font-weight:400; font-size:29px; line-height:1.3; margin:0; color:var(--ink); }
+.hero .dates{ margin:6px 0 12px; color:var(--muted); font-size:16px; }
+.chips{ display:flex; flex-wrap:wrap; gap:8px; justify-content:center; }
+.chips span{ background:var(--card); border-radius:99px; padding:5px 14px; font-size:14.5px; font-weight:600; box-shadow:0 2px 0 rgba(0,0,0,.06); }
+.snav{ position:sticky; top:0; z-index:20; display:flex; gap:8px; justify-content:center; padding:10px 12px; background:linear-gradient(var(--bg) 78%, transparent); }
+.snav a{ flex:1; max-width:140px; text-align:center; background:var(--card); border:2px solid var(--line); border-radius:99px; padding:8px 6px; font-weight:700; font-size:15.5px; color:var(--ink); text-decoration:none; }
+.snav a:active{ transform:scale(.97); }
+.page{ max-width:760px; margin:0 auto; padding:6px 14px 60px; }
+h2{ font-family:var(--font-cute); font-weight:400; font-size:23px; margin:30px 0 10px; line-height:1.35; }
+.sub{ color:var(--muted); margin:0 0 6px; }
+.note{ color:var(--muted); font-size:15px; }
+.daychips{ display:grid; grid-template-columns:repeat(3,1fr); gap:10px; margin:10px 0 6px; }
+.daychips a{ display:block; text-align:center; text-decoration:none; border-radius:20px; padding:12px 4px 10px; color:var(--ink); box-shadow:0 3px 0 rgba(0,0,0,.07); }
+.daychips a .e{ display:block; font-size:26px; line-height:1.2; }
+.daychips a b{ display:block; font-family:var(--font-cute); font-weight:400; font-size:19px; }
+.daychips a span.d{ font-size:14px; color:var(--muted); }
+.daychips a:nth-child(1){ background:var(--peach); } .daychips a:nth-child(2){ background:var(--sky); } .daychips a:nth-child(3){ background:var(--lav); }
+.daysec{ margin:28px 0 8px; padding-top:4px; }
+.daysec > h2{ margin:0 0 10px; }
+.tl{ list-style:none; margin:8px 0; padding:0; display:grid; gap:10px; }
+.tl li{ display:grid; grid-template-columns:48px 1fr; gap:12px; align-items:center; background:var(--card); border-radius:20px; padding:12px 14px 12px 12px; box-shadow:0 3px 0 rgba(0,0,0,.06); border:2px solid transparent; }
+.tl li.has-f{ background:var(--lemon); } .tl li.has-s{ background:var(--mint); }
+.tl .emo{ width:48px; height:48px; border-radius:50%; background:var(--sky); display:flex; align-items:center; justify-content:center; font-size:26px; }
+.tl li.has-f .emo, .tl li.has-s .emo{ background:var(--card); }
+.tl time{ display:inline-block; font-family:var(--font-cute); font-size:16px; padding:0 11px; border-radius:99px; background:var(--sky); color:var(--sky-d); line-height:1.6; }
+.tl li.has-f time{ background:var(--card); color:var(--lemon-d); } .tl li.has-s time{ background:var(--card); color:var(--mint-d); }
+.tl .ttl{ font-size:18.5px; font-weight:700; line-height:1.4; margin-top:3px; }
+.tl small{ display:block; font-size:15px; color:var(--muted); margin-top:2px; font-weight:400; }
+.callout{ background:var(--lemon); border-radius:18px; padding:12px 16px; margin:12px 0; font-size:16px; }
+.facts{ display:grid; gap:10px; margin:6px 0; }
+.facts div{ background:var(--card); border-radius:18px; padding:12px 16px; box-shadow:0 3px 0 rgba(0,0,0,.06); }
+.facts dt{ font-size:14px; color:var(--muted); font-weight:700; }
+.facts dd{ margin:0; font-size:17.5px; font-weight:700; }
+.facts dd small{ display:block; font-weight:400; color:var(--muted); font-size:15px; }
+details{ background:var(--card); border-radius:18px; box-shadow:0 3px 0 rgba(0,0,0,.06); margin:10px 0; padding:0 16px; }
+.ref{ background:none; box-shadow:none; padding:0; }
+summary{ cursor:pointer; list-style:none; display:flex; align-items:center; gap:10px; padding:14px 0; font-weight:700; font-size:17.5px; }
+summary::-webkit-details-marker{ display:none; }
+summary::after{ content:"+"; margin-left:auto; width:28px; height:28px; border-radius:50%; background:var(--sky); color:var(--sky-d); display:flex; align-items:center; justify-content:center; font-size:20px; flex:0 0 auto; }
+details[open] > summary::after{ content:"\2212"; background:var(--peach); color:var(--peach-d); }
+.semo{ font-size:22px; }
+details > *:not(summary){ font-size:16px; }
+details ul{ padding-left:20px; margin:4px 0 12px; } details li{ margin:6px 0; }
+.tbl-wrap{ overflow-x:auto; margin:6px 0; }
+table.rt{ width:100%; border-collapse:collapse; font-size:15px; }
+table.rt th, table.rt td{ text-align:left; padding:8px 8px 8px 0; border-bottom:1px dashed var(--line); vertical-align:top; }
+table.rt th{ color:var(--muted); font-weight:700; font-size:13.5px; }
+table.rt td:first-child, table.rt th:first-child{ white-space:nowrap; padding-right:12px; }
+.grp{ margin:18px 0 4px; } .grp-h{ display:flex; justify-content:space-between; align-items:baseline; }
+.grp-h h3{ margin:0; font-size:18px; font-family:var(--font-cute); font-weight:400; } .grp-h span{ color:var(--muted); font-size:14px; }
+.items{ list-style:none; margin:8px 0; padding:0; display:grid; gap:8px; }
+.item{ display:flex; gap:12px; align-items:flex-start; background:var(--card); border-radius:16px; padding:12px 14px; box-shadow:0 2px 0 rgba(0,0,0,.05); }
+.item input{ width:24px; height:24px; margin:2px 0 0; accent-color:var(--mint-d); flex:0 0 auto; }
+.item .txt{ flex:1; font-weight:600; } .item .txt small{ display:block; font-weight:400; color:var(--muted); font-size:15px; margin-top:2px; }
+.tag{ font-style:normal; font-size:12.5px; padding:2px 10px; border-radius:99px; background:var(--lav); color:var(--lav-d); font-weight:700; }
+.tag.out{ background:var(--peach); color:var(--peach-d); }
+.sight{ padding:0 16px; }
+.sight summary{ display:flex; flex-wrap:wrap; gap:6px 10px; padding:14px 0; }
+.sight summary::after{ content:"자세히 +"; width:auto; height:auto; border-radius:99px; padding:2px 12px; font-size:14px; font-weight:700; margin-left:0; flex:1 1 100%; justify-content:center; background:var(--sky); }
+.sight[open] summary::after{ content:"접기 \2212"; background:var(--peach); }
+.sg-name{ flex:1 1 100%; font-weight:700; font-size:18.5px; line-height:1.35; display:flex; align-items:center; gap:8px; }
+.sg-meta{ flex:1 1 100%; color:var(--muted); font-size:14.5px; font-weight:400; }
+.fit{ font-size:13px; padding:2px 11px; border-radius:99px; font-weight:700; }
+.f-high{ background:var(--mint); color:var(--mint-d); } .f-mid{ background:var(--sky); color:var(--sky-d); } .f-low{ background:var(--pink); color:var(--pink-d); }
+.sg-body{ border-top:2px dashed var(--line); padding:10px 0 12px; font-size:16px; }
+.sg-facts li{ margin:5px 0; } .sg-links{ font-size:14px; color:var(--muted); }
+.foot{ text-align:center; color:var(--muted); font-size:14.5px; margin-top:34px; }
+</style>
+</head>
+<body>
+<header class="hero">
+  <h1>🍊 제주 가족 여행 🌴</h1>
+  <p class="dates">2박 3일 · 11/27(금) ~ 11/29(일)</p>
+  <div class="chips"><span>✈️ 제주항공</span><span>🏨 소노캄 제주 빌라</span><span>👶 유주와 함께</span></div>
+</header>
+<nav class="snav" aria-label="바로가기"><a href="#plan">📅 일정</a><a href="#check">✅ 확인·비상</a><a href="#sights">🗺️ 관광지</a></nav>
+<div class="page">
+  <div id="plan">
+    <div class="daychips">
+      <a href="#day1"><span class="e">🛫</span><b>1일차</b><span class="d">11/27(금)</span></a>
+      <a href="#day2"><span class="e">🐠</span><b>2일차</b><span class="d">11/28(토)</span></a>
+      <a href="#day3"><span class="e">🛬</span><b>3일차</b><span class="d">11/29(일)</span></a>
+    </div>
+    <div class="daysec" id="day1"><h2>🛫 1일차 · 11/27(금) · 이동하는 날</h2><ol class="tl"><li class="has-f"><span class="emo">🍼</span><div class="body"><time>07:00</time><div class="ttl">유주 분유</div></div></li><li class="has-f has-s"><span class="emo">🥣</span><div class="body"><time>10:30</time><div class="ttl">유주 이유식 + 분유</div><small>김포공항에서</small></div></li><li class=""><span class="emo">🛬</span><div class="body"><time>13:00</time><div class="ttl">제주 도착 · 가족 합류</div></div></li><li class=""><span class="emo">🍖</span><div class="body"><time>13:30</time><div class="ttl">점심: 숙성도 제주본점</div><small>제주시 연동</small></div></li><li class="has-f"><span class="emo">🍼</span><div class="body"><time>14:00</time><div class="ttl">유주 분유</div></div></li><li class=""><span class="emo">🚗</span><div class="body"><time>14:30</time><div class="ttl">숙소로 출발</div><small>가는 길에 파리바게뜨 동화마을점(송당)에 들러요.</small></div></li><li class="has-f has-s"><span class="emo">🥣</span><div class="body"><time>17:00</time><div class="ttl">유주 이유식 + 분유</div></div></li><li class=""><span class="emo">🏨</span><div class="body"><time>18:00</time><div class="ttl">숙소 체크인</div><small>도착 시각은 예상이에요.</small></div></li><li class=""><span class="emo">🍚</span><div class="body"><time>18:30</time><div class="ttl">저녁: 한식당 소담(예정)</div><small>소노캄 제주 빌라 안</small></div></li><li class=""><span class="emo">🛁</span><div class="body"><time>19:30</time><div class="ttl">유주 목욕 · 취침 준비</div></div></li><li class="has-f"><span class="emo">🍼</span><div class="body"><time>20:00</time><div class="ttl">유주 분유</div></div></li><li class=""><span class="emo">🌙</span><div class="body"><time>21:00</time><div class="ttl">야식 (회 등)</div></div></li></ol></div>
+    <div class="daysec" id="day2"><h2>🐠 2일차 · 11/28(토) · 아쿠아플라넷 가는 날</h2><ol class="tl"><li class="has-f"><span class="emo">🍼</span><div class="body"><time>07:00</time><div class="ttl">유주 분유</div></div></li><li class=""><span class="emo">🚶</span><div class="body"><time>07:30</time><div class="ttl">단지 안 짧은 산책</div></div></li><li class=""><span class="emo">🥞</span><div class="body"><time>09:00</time><div class="ttl">숙소 안 간단 아침</div></div></li><li class="has-f has-s"><span class="emo">🥣</span><div class="body"><time>10:00</time><div class="ttl">유주 이유식 + 분유</div></div></li><li class=""><span class="emo">🚗</span><div class="body"><time>10:30</time><div class="ttl">성산으로 출발</div></div></li><li class=""><span class="emo">🐠</span><div class="body"><time>11:00</time><div class="ttl">아쿠아플라넷 관람</div></div></li><li class=""><span class="emo">🍽️</span><div class="body"><time>13:00</time><div class="ttl">점심 (성산 근처)</div></div></li><li class="has-f"><span class="emo">🍼</span><div class="body"><time>14:00</time><div class="ttl">유주 분유</div></div></li><li class=""><span class="emo">🏨</span><div class="body"><time>15:00</time><div class="ttl">숙소 복귀</div></div></li><li class=""><span class="emo">🏊</span><div class="body"><time>16:00</time><div class="ttl">실내풀 (선택)</div></div></li><li class="has-f has-s"><span class="emo">🥣</span><div class="body"><time>17:00</time><div class="ttl">유주 이유식 + 분유</div></div></li><li class=""><span class="emo">🍚</span><div class="body"><time>18:00</time><div class="ttl">가족 저녁 (미정)</div></div></li><li class=""><span class="emo">🛁</span><div class="body"><time>19:00</time><div class="ttl">유주 목욕 · 취침 준비</div></div></li><li class="has-f"><span class="emo">🍼</span><div class="body"><time>20:00</time><div class="ttl">유주 분유</div></div></li></ol></div>
+    <div class="daysec" id="day3"><h2>🛬 3일차 · 11/29(일) · 돌아오는 날</h2><ol class="tl"><li class="has-f"><span class="emo">🍼</span><div class="body"><time>07:00</time><div class="ttl">유주 분유</div></div></li><li class=""><span class="emo">🥞</span><div class="body"><time>08:00</time><div class="ttl">아침: 호텔 조식 뷔페</div></div></li><li class=""><span class="emo">🚶</span><div class="body"><time>09:00</time><div class="ttl">짐 정리 · 산책</div></div></li><li class="has-f has-s"><span class="emo">🥣</span><div class="body"><time>10:00</time><div class="ttl">유주 이유식 + 분유</div></div></li><li class=""><span class="emo">🧳</span><div class="body"><time>10:50</time><div class="ttl">체크아웃</div></div></li><li class="has-f"><span class="emo">🍼</span><div class="body"><time>14:00</time><div class="ttl">유주 분유</div></div></li><li class=""><span class="emo">🛫</span><div class="body"><time>16:15</time><div class="ttl">이륙</div></div></li><li class="has-f has-s"><span class="emo">🥣</span><div class="body"><time>17:00</time><div class="ttl">유주 이유식 + 분유</div></div></li><li class="has-f"><span class="emo">🍼</span><div class="body"><time>20:00</time><div class="ttl">유주 분유</div></div></li></ol></div>
+    <div class="daysec" id="trip-info"><h2>🏨 항공 · 숙소</h2><dl class="facts">
+      <div><dt>✈️ 가는 편</dt><dd>11/27(금) 11:50 출발<small>제주항공 · 김포 10:20 도착</small></dd></div>
+      <div><dt>🛬 오는 편</dt><dd>11/29(일) 16:15 출발<small>제주항공 · 17:25 도착 예정</small></dd></div>
+      <div><dt>🏨 숙소</dt><dd>소노캄 제주 빌라(표선)<small>체크인 15:00 · 체크아웃 11:00<br>공항에서 차로 약 1시간 15분</small></dd></div>
+    </dl></div>
+    <p class="note">일정은 바뀔 수 있어요. 수유 시간은 아기 컨디션에 맞게 조정해요.</p>
+  </div>
+  <div id="check"><h2 style="margin-top:38px">✅ 확인 · 비상</h2>
+  <h2>✈️ 제주항공 규정 요약</h2>
+  <p class="note">제주항공 공식 안내 기준이에요. 바뀔 수 있으니 출발 전에 고객센터(1599-1500, 09:00~19:00)에서 한 번 더 확인하세요.</p>
+  <div class="callout">유아 앞좌석 사전 요청은 출발 48시간 전(11/25 11:50)까지였어요. 지금은 공항 카운터에서 요청하세요. 분유포트, 유모차, 유아용 안전벨트는 카운터나 고객센터(1599-1500)에 물어보세요.</div>
+
+  <div class="ref"><details><summary><span class="semo">⏰</span>수속 시간 (11:50 이륙 기준)</summary><div class="tbl-wrap"><table class="rt">
+      <tbody><tr><th>단계</th><th>제주항공 기준</th><th>이번 일정</th></tr>
+      <tr><td>공항 도착</td><td>출발 1시간 30분 전~30분 전</td><td>10:20 (권장 시작 시각)</td></tr>
+      <tr><td>탑승 수속 마감</td><td>출발 30분 전</td><td>11:20</td></tr>
+      <tr><td>보안검색</td><td>출발 50분 전</td><td>11:00</td></tr>
+      <tr><td>탑승 게이트</td><td>출발 20분 전~10분 전</td><td>11:30~11:40</td></tr>
+      <tr><td>탑승 마감</td><td>출발 10분 전</td><td>11:40</td></tr>
+    </tbody></table></div><p class="note">제주공항에서 돌아오는 날(16:15)도 같은 기준이라 14:45 도착이 권장 시작 시각이에요. 아기와 가면 더 일찍 도착해요.</p></details><details><summary><span class="semo">🪪</span>아기 탑승 서류와 탑승권</summary><ul>
+      <li>만 2세 미만 유아는 국내선 무료이고 좌석 없이 보호자가 안고 타요.</li>
+      <li>생년월일을 확인할 수 있는 서류가 필요해요. 공식 예시는 출생증명서, 주민등록등본, 여권이에요.</li>
+      <li>유아 동반 승객은 웹·셀프 체크인과 모바일 탑승권이 제한돼서 공항 카운터에서 탑승권을 받아야 해요.</li>
+    </ul></details><details><summary><span class="semo">💺</span>우선 서비스와 좌석</summary><ul>
+      <li>유아 동반은 카운터에서 우선 수속, 탑승구에서 우선 탑승이 가능해요(동반자 2인까지). 직원에게 아기 동반을 알리면 돼요.</li>
+      <li>앞좌석은 출발 48시간 전까지 고객센터에 요청하면 무료로 배정돼요(보호자 2명까지). 이후에는 공항 카운터에서 신청해요.</li>
+      <li>비상구 좌석은 유아 동반 고객이 이용할 수 없어요.</li>
+    </ul></details><details><summary><span class="semo">🍼</span>유아식과 물품 반입</summary><ul>
+      <li>유아 동반 시 이유식, 죽, 음료, 우유 같은 유아용 음식과 물티슈, 아이스팩은 용기당 100ml를 넘어도 기내에 가져갈 수 있어요.</li>
+      <li>이유식은 승무원에게 요청하면 중탕이나 오븐으로 데워 줘요. 별도 용기를 챙겨야 해요.</li>
+      <li>대부분의 항공기 화장실에 기저귀 갈이대가 있어요. 담요는 기내 에어카페에서 살 수 있어요(본인 명의 카드나 현금).</li>
+    </ul></details><details><summary><span class="semo">🧳</span>유모차와 짐</summary><ul>
+      <li>유모차, 보행기, 카시트, 요람은 무료로 위탁할 수 있어요(기내 수하물은 제외).</li>
+      <li>기내 반입 조건, 위탁 처리 방식, 수령 장소는 공식 안내에 별도 페이지가 있어서 이번에 확인하지 못했어요.</li>
+    </ul></details><details><summary><span class="semo">🔋</span>보조배터리와 전자기기</summary><ul>
+      <li>보조배터리는 위탁이 안 되고, 단락 방지(비닐팩·절연테이프) 후 몸에 지니거나 보이는 곳에 두어야 해요.</li>
+      <li>기내에서 보조배터리를 사용하거나 충전할 수 없어요.</li>
+      <li>100Wh 초과 160Wh 이하는 체크인 카운터 승인이 필요하고 합산 2개까지만 가능해요.</li>
+    </ul></details><details><summary><span class="semo">❓</span>공식 안내에서 찾지 못한 것</summary><ul>
+      <li>휴대용 분유포트(배터리 내장 가열 기기)</li>
+      <li>유아용 안전벨트 제공 여부</li>
+      <li>유모차의 기내 반입 규격과 탑승구 위탁 방법</li>
+    </ul></details><details><summary><span class="semo">🔗</span>공식 안내 페이지</summary><ul>
+      <li><a href="https://www.jejuair.net/ko/terms/page/FamilyTravelGuide.do" target="_blank" rel="noopener noreferrer">가족 여행 · 유아 동반 안내</a></li>
+      <li><a href="https://www.jejuair.net/ko/linkService/fastProcedure/guide.do" target="_blank" rel="noopener noreferrer">국내선 빠른 수속 안내</a></li>
+      <li><a href="https://www.jejuair.net/ko/linkService/boardingProcessGuide/transportLimitation.do" target="_blank" rel="noopener noreferrer">운송 제한 물품(보조배터리 등)</a></li>
+    </ul></details></div>
+
+  <h2>✅ 출발 전에 확인할 것</h2>
+  <p class="note">전화나 예약 화면에서 확인하면 체크하세요. 일정이 이 결과에 따라 바뀔 수 있어요.</p>
+  <div id="checkList"><section class="grp" id="checkList-g0"><div class="grp-h"><h3>항공사에 문의</h3><span id="gh-0">0 / 8</span></div><ul class="items"><li class="item-wrap"><label class="item"><input type="checkbox" data-id="ck-air-water"><span class="txt">유아식·분유 물 기내 반입<small>제주항공 공식 안내: 유아 동반 시 이유식·죽·음료·우유는 100ml를 넘어도 반입 가능해요. 보안검색 때 아기 동반을 알려요.</small></span></label></li><li class="item-wrap"><label class="item"><input type="checkbox" data-id="ck-air-pot"><span class="txt">휴대용 분유포트 반입 가능 여부<small>제주항공 공식 안내에서 분유포트 규정은 찾지 못했어요. 가열 기기라서 고객센터(1599-1500, 09~19시)에 확인하세요. 숙소에 전기포트가 있어 안 가져가도 돼요.</small></span></label></li><li class="item-wrap"><label class="item"><input type="checkbox" data-id="ck-air-ice"><span class="txt">아이스팩 반입<small>제주항공 공식 안내: 유아 동반 시 아이스팩도 100ml 초과 기내 반입이 가능해요.</small></span></label></li><li class="item-wrap"><label class="item"><input type="checkbox" data-id="ck-air-stroller"><span class="txt">유모차 위탁 방법 · 기내 반입 규격<small>무료 위탁은 공식 안내로 확인됐어요. 탑승구까지 쓸 수 있는지, 기내 반입 규격과 수령 장소는 카운터나 고객센터에 확인하세요.</small></span></label></li><li class="item-wrap"><label class="item"><input type="checkbox" data-id="ck-air-ticket"><span class="txt">아기 탑승권 · 카운터 수속<small>제주항공은 유아 동반 시 모바일·키오스크 발급이 제한돼 공항 카운터에서 발급해요. 10:20 도착 후 먼저 카운터로 가세요.</small></span></label></li><li class="item-wrap"><label class="item"><input type="checkbox" data-id="ck-air-belt"><span class="txt">유아용 안전벨트 · 아기 안는 방법<small>공식 안내에서는 찾지 못했어요. 카운터나 승무원에게 유아용 벨트가 있는지 물어보세요.</small></span></label></li><li class="item-wrap"><label class="item"><input type="checkbox" data-id="ck-air-seat"><span class="txt">앞좌석 요청 (공항 카운터에서)<small>사전 요청 기한(출발 48시간 전)은 지났어요. 공항 카운터에서 유아 동반을 알리고 앞좌석을 요청해요(보호자 2명까지). 비상구 좌석은 제한돼요.</small></span></label></li><li class="item-wrap"><label class="item"><input type="checkbox" data-id="ck-air-priority"><span class="txt">우선 수속 · 우선 탑승 요청<small>카운터와 탑승구에서 아기 동반을 알리면 우선 수속·우선 탑승이 가능해요(동반자 2인까지).</small></span></label></li></ul></section><section class="grp" id="checkList-g1"><div class="grp-h"><h3>숙소에 확인</h3><span id="gh-1">0 / 9</span></div><ul class="items"><li class="item-wrap"><label class="item"><input type="checkbox" data-id="ck-stay-wash"><span class="txt">세탁기 · 세탁 서비스<small>공식 비품 목록에는 세탁기가 없고 빨래 건조대만 있어요. 옷을 넉넉히 챙기거나 세탁 시설을 문의하세요.</small></span></label></li><li class="item-wrap"><label class="item"><input type="checkbox" data-id="ck-stay-bed"><span class="txt">아기 침대 · 아기 욕조 대여</span></label></li><li class="item-wrap"><label class="item"><input type="checkbox" data-id="ck-stay-jacuzzi"><span class="txt">자쿠지 위치 · 이용 방법<small>프리미어 릴렉션 복층은 2층에 자쿠지가 있다는 후기가 있어요. 프레지덴셜은 공식 객실 정보에 적혀 있지 않아요.</small></span></label></li><li class="item-wrap"><label class="item"><input type="checkbox" data-id="ck-stay-room"><span class="txt">예약 확인서의 객실명 · 인원 확인<small>공식 안내: 프레지덴셜 릴렉션 복층 오션, 8인 · 245㎡ · 침실 4개. 예약 확인서와 같은지 확인하세요.</small></span></label></li><li class="item-wrap"><label class="item"><input type="checkbox" data-id="ck-stay-kitchen"><span class="txt">주방 구성 현장 확인<small>공식 안내에 냉장고, 전자레인지, 인덕션, 전기포트, 냄비·프라이팬이 있어요. 도착해서 실제로 있는지만 확인하세요.</small></span></label></li><li class="item-wrap"><label class="item"><input type="checkbox" data-id="ck-stay-fridge"><span class="txt">냉동칸 크기: 이유식 6끼를 얼려 둘 수 있는지<small>좁다면 프런트에 냉동 보관을 부탁하거나 보냉백과 아이스팩으로 버텨요.</small></span></label></li><li class="item-wrap"><label class="item"><input type="checkbox" data-id="ck-stay-stairs"><span class="txt">복층 계단 안전<small>아기가 계단에 접근하지 못하게 침대 위치와 안전문 대여 여부를 확인하세요. 같은 복층 계열 후기에 계단이 가파르다는 의견이 있었어요.</small></span></label></li><li class="item-wrap"><label class="item"><input type="checkbox" data-id="ck-stay-checkin"><span class="txt">늦은 퇴실 · 짐 보관 문의<small>공식 안내: 체크아웃 11:00, 늦은 퇴실은 유료(11~12시는 1박 객실료의 10%)이고 객실 상황에 따라 불가할 수 있어요. 짐은 4층 로비 물품보관함 이용이 가능하다고 안내돼요.</small></span></label></li><li class="item-wrap"><label class="item"><input type="checkbox" data-id="ck-stay-parking"><span class="txt">주차: 객실당 1대 무료인지<small>가족 차 번호를 프런트에 알려야 할 수 있어요.</small></span></label></li></ul></section><section class="grp" id="checkList-g2"><div class="grp-h"><h3>1일차 이동</h3><span id="gh-2">0 / 6</span></div><ul class="items"><li class="item-wrap"><label class="item"><input type="checkbox" data-id="ck-d1-lunch"><span class="txt">숙성도 제주본점 예약 · 아기의자 확인<small>064-743-8877. 캐치테이블에서 예약·웨이팅이 가능해요. 13:30 방문 예정이니 아기의자와 엘리베이터를 물어보세요.</small></span></label></li><li class="item-wrap"><label class="item"><input type="checkbox" data-id="ck-d1-babyfood"><span class="txt">마미포유 영업 · 당일 구매 확인<small>전화번호를 찾지 못했어요. 네이버 지도 등에서 번호를 찾아 당일 구매 가능 여부와 영업시간을 확인하세요. 안 되면 마트나 파우치로 대체해요.</small></span></label></li><li class="item-wrap"><label class="item"><input type="checkbox" data-id="ck-d1-route"><span class="txt">1일차 이동 시간 지도 앱으로 확인<small>숙성도, 마미포유(해안동), 송당 동화마을, 숙소 순서의 실제 소요 시간을 확인해요. 15시 이후 시각은 예상이에요.</small></span></label></li><li class="item-wrap"><label class="item"><input type="checkbox" data-id="ck-d1-dinner"><span class="txt">한식당 소담 영업·예약·아기의자 확인<small>소노캄 제주 빌라의 소담은 공식 정보에서 찾지 못했어요. 프런트(소노예약센터 1588-4888)에 영업시간, 예약, 아기의자를 물어보세요.</small></span></label></li><li class="item-wrap"><label class="item"><input type="checkbox" data-id="ck-d1-night"><span class="txt">1일차 야식 정하기(20:30)<small>객실에서 먹을 야식을 정해요. 숙소 BBQ치킨 포장(22:00까지로 안내)이나 편의점이 후보예요. 객실 안 육류·튀김·생선 조리는 금지로 안내돼요.</small></span></label></li><li class="item-wrap"><label class="item"><input type="checkbox" data-id="ck-d1-spa"><span class="txt">실내풀 수온 · 영아 이용 확인<small>소노예약센터(1588-4888)에 실내풀 수온, 영아용 구명조끼, 방수 기저귀 판매 여부를 물어보세요. 36개월 미만은 증빙서류와 방수 기저귀가 필요해요.</small></span></label></li></ul></section><section class="grp" id="checkList-g3"><div class="grp-h"><h3>2일차 성산 외출</h3><span id="gh-3">0 / 4</span></div><ul class="items"><li class="item-wrap"><label class="item"><input type="checkbox" data-id="ck-d2-breakfast"><span class="txt">아침 식사 정하기<small>호텔 조식 뷔페(본관 5층, 07:00~10:30로 안내), 포장, 배달 중에서 정해야 해요. 36개월 미만 조식 요금은 확인하지 못했어요.</small></span></label></li><li class="item-wrap"><label class="item"><input type="checkbox" data-id="ck-d2-aqua"><span class="txt">아쿠아플라넷 서류 · 운영 확인<small>36개월 미만 무료는 증빙서류(등본 등)가 필요해요. 운영 09:30~18:00, 입장 마감 17:30. 문의 1833-7001(10:00~18:00).</small></span><em class="tag out">외출 시</em></label></li><li class="item-wrap"><label class="item"><input type="checkbox" data-id="ck-d2-lunch"><span class="txt">성산 근처 점심 식당 정하기<small>13:00 점심이에요. 아기의자가 있는지 전화로 확인하세요.</small></span><em class="tag out">외출 시</em></label></li><li class="item-wrap"><label class="item"><input type="checkbox" data-id="ck-d2-seongsan"><span class="txt">성산일출봉 갈지 결정<small>동절기(11~2월)는 06:00~18:00이고 매표는 17:00에 마감해요. 정상은 계단이라 유모차가 안 되고, 무료 우뭇개 산책로(왕복 20~30분)는 유모차가 가능하다는 안내가 있어요.</small></span><em class="tag out">외출 시</em></label></li></ul></section><section class="grp" id="checkList-g4"><div class="grp-h"><h3>3일차 이동</h3><span id="gh-4">0 / 3</span></div><ul class="items"><li class="item-wrap"><label class="item"><input type="checkbox" data-id="ck-d3-bf"><span class="txt">조식 뷔페 사전예약(11/28 22:00까지)<small>셰프스키친 조식은 이용일 1일 전 22:00까지 프런트에 사전예약하면 15% 할인돼요. 36개월 미만 요금도 같이 물어보세요.</small></span></label></li><li class="item-wrap"><label class="item"><input type="checkbox" data-id="ck-d3-meals"><span class="txt">3일차 점심 정하기<small>표선 근처 아기의자 있는 식당으로 정해요.</small></span></label></li><li class="item-wrap"><label class="item"><input type="checkbox" data-id="ck-d3-home"><span class="txt">김포공항에서 집까지 귀가 방법 정하기<small>17:25 도착이에요. 카시트가 있는 택시(서울엄마아빠택시는 예약 호출 원칙)나 가족 차 중에서 정해요.</small></span></label></li></ul></section><section class="grp" id="checkList-g5"><div class="grp-h"><h3>렌터카·장소</h3><span id="gh-5">0 / 4</span></div><ul class="items"><li class="item-wrap"><label class="item"><input type="checkbox" data-id="ck-car-seat"><span class="txt">영아용 카시트: 누가 챙기는지<small>먼저 가는 가족이 렌터카를 챙겨요. 영아용(후향) 카시트도 같이 예약했는지 확인하세요.</small></span></label></li><li class="item-wrap"><label class="item"><input type="checkbox" data-id="ck-car-shuttle"><span class="txt">공항에서 합류하는 방법<small>도착 시간에 맞춰 어디서 만날지, 짐 실을 공간이 충분한지 정해요.</small></span></label></li><li class="item-wrap"><label class="item"><input type="checkbox" data-id="ck-taxi"><span class="txt">택시 예약 (집에서 김포공항, 09:00 출발)<small>서울엄마아빠택시는 24개월 이하 영아 동반 시 이용하고 카시트가 상시 비치돼요. 예약 호출이 원칙이고, 서울 거주 등 자격과 신청·승인이 필요해요(포인트 지급까지 최대 약 12일). 김포공항 행 이용 가능 여부는 앱에서 확인하세요.</small></span></label></li><li class="item-wrap"><label class="item"><input type="checkbox" data-id="ck-clinic"><span class="txt">표선 소아과 토·일 진료 여부</span></label></li></ul></section></div>
+
+  <h2>🚗 1일차 이동 (점심 · 이유식 · 동화마을)</h2>
+  <p class="note">확인한 범위만 적었어요. 영업시간과 재고는 가기 전에 전화로 확인하세요. 15시 이후 이동 시각은 예상이에요.</p>
+  <div class="ref"><details><summary><span class="semo">🍖</span>점심: 숙성도 제주본점 (13:30)</summary><ul>
+      <li>제주시 제원길 30(연동) 2~3층이에요. 전화 064-743-8877(다른 안내에는 0507-1335-5211도 나와요).</li>
+      <li>영업시간은 11:30~22:00(마지막 주문 21:10)이고 연중무휴예요. 제주공항과 가까워서 여행 첫날이나 마지막 식사 장소로 많이 찾는다고 해요.</li>
+      <li>주차는 건물 1층 전용주차장(10:30~22:15)을 쓰고, 만차면 주변 공영·사설 주차장을 이용해요(주차비 지원 없음). 식사 후 15분 안에 출차해야 해요.</li>
+      <li>현장 방문이나 캐치테이블로 예약과 웨이팅이 가능하고 대행 서비스는 없어요. 1인도 2인분부터 주문하는 곳으로 안내돼요.</li>
+      <li>아기의자, 엘리베이터, 유모차 이동 가능 여부는 확인하지 못했어요. 전화로 물어보세요.</li>
+      <li>참고 의견: 고깃집은 연기와 기름 냄새가 아기에게 부담될 수 있어요. 한 사람은 환기가 되는 자리나 차에서 유주와 있고 번갈아 먹는 방법도 생각해 보세요.</li>
+    </ul><p class="note">근거: <a href="https://leisure-web.yanolja.com/leisure/10285863" target="_blank" rel="noopener noreferrer">운영·주차 안내(야놀자 레저)</a> · <a href="https://www.diningcode.com/profile.php?rid=ax5XxH7fRRkQ" target="_blank" rel="noopener noreferrer">다이닝코드</a> · <a href="https://www.ktourmap.com/spotDetails.jsp?contentId=2798036" target="_blank" rel="noopener noreferrer">관광공사 정보</a></p></details><details><summary><span class="semo">🥣</span>이유식 구매: 마미포유 (15:00)</summary><ul>
+      <li>제주시 해안마을서4길 131이에요. 매장에서 바로 먹일 수 있고 전국 택배도 된다고 해요(블로그 안내).</li>
+      <li>영업시간, 전화번호, 주문 방법은 검색으로 찾지 못했어요. 주문 제작 방식이면 당일 구매가 안 될 수 있어요.</li>
+      <li>해안동은 제주 서쪽 중산간이라 표선과 반대 방향이에요. 숙성도와 송당 동화마을 사이의 가장 큰 우회가 돼요(실제 시간은 지도 앱으로 확인하세요).</li>
+      <li>당일 구매가 안 되면 이마트 제주점(탑동로 38)이나 롯데마트 제주점(연북로 1)에 시판 이유식이 있는지 전화로 확인하거나 집에서 파우치를 더 챙겨요.</li>
+    </ul></details><details><summary><span class="semo">🥐</span>파리바게뜨 동화마을점 (16:30)</summary><ul>
+      <li>제주동화마을(동쪽송당 동화마을) 안에 있고 주소는 제주시 구좌읍 비자림로 1191이에요. 문의 064-743-5000.</li>
+      <li>이용시간은 09:00~20:00이고 연중무휴예요. 입장과 주차는 무료로 안내돼요.</li>
+      <li>마을 안에 스타벅스, 이시돌목장 미스터밀크, 코리코카페 등이 있어요.</li>
+      <li>수유실, 기저귀 교환대, 유모차 대여는 없어요. 유모차 이동은 비교적 편하다고 해요. 17:00 이유식 + 분유는 주차장의 차 안에서 먹여요.</li>
+    </ul><p class="note">근거: <a href="https://www.ktriptips.com/kor/tourspot/3371999" target="_blank" rel="noopener noreferrer">제주동화마을(관광 정보)</a> · <a href="https://mom-mom.net/travel/places/670dd638820b1c3517d7201f" target="_blank" rel="noopener noreferrer">맘맘 장소 정보</a> · <a href="https://biz.newdaily.co.kr/site/data/html/2024/06/19/2024061900090.html" target="_blank" rel="noopener noreferrer">파리바게뜨 동화마을점 소개 기사</a></p></details><details><summary><span class="semo">🏊</span>숙소 실내 풀 · 사우나 (2일차 오후 추천)</summary><ul>
+      <li>소노캄 제주 빌라 투숙객 전용 스파는 찾지 못했어요. 공식 안내에 있는 실내 시설은 실내풀과 사우나예요.</li>
+      <li>실내풀은 10:00~18:00, 사우나는 20:00까지예요. 안내 페이지마다 사우나 시작 시간(06:00 또는 07:00)이 달라요.</li>
+      <li>사우나는 성인 12,000원, 사우나+실내풀은 성인 20,000원이에요.</li>
+      <li>36개월 미만 영유아는 증빙서류(등본, 건강보험증 등)를 지참하면 무료로 입장하고, 방수 기저귀를 착용하면 이용할 수 있다고 안내돼요.</li>
+      <li>풀장에서는 수영복이나 래시가드를 입어야 하고, 신장 120cm 미만은 구명조끼를 입고 보호자와 함께 입장해요. 구명조끼는 보유 수량 안에서 무료로 빌려줘요.</li>
+      <li>만 4세 이상은 남녀가 함께 들어갈 수 없고, 사우나 안으로 음식물을 가져갈 수 없어요.</li>
+      <li>실내풀의 수온, 영아용 구명조끼 보유 여부, 방수 기저귀 판매 여부는 확인하지 못했어요. 소노예약센터(1588-4888)나 현장 프런트에 물어보세요.</li>
+      <li>참고 의견: 8개월 아기는 체온이 쉽게 떨어질 수 있어서 실내풀은 수온이 따뜻할 때만 한 명이 안고 몇 분 정도 짧게 하고, 사우나의 열탕·건식 시설에는 유주를 데려가지 않는 편이 안전해요.</li>
+      <li>1일차는 체크인이 18시 넘어서라 이용하기 어려워요. 2일차 15:30 이후에 번갈아 이용하는 쪽을 추천해요.</li>
+    </ul><p class="note">근거: <a href="https://www.sonohotelsresorts.com/calm_jj/facilitiesviewall/detail/ADD00107730" target="_blank" rel="noopener noreferrer">소노캄 제주 사우나·실내풀(공식)</a></p></details></div>
+
+  <h2>🍽️ 숙소 식사 (1일차 저녁 · 야식, 3일차 조식)</h2>
+  <p class="note">확인한 범위만 적었어요. 영업시간과 예약은 프런트(소노예약센터 1588-4888, 09:00~18:00)에 확인하세요.</p>
+  <div class="ref"><details><summary><span class="semo">🍚</span>한식당 소담 (1일차 저녁, 잠정)</summary><ul>
+      <li>소노캄 제주 빌라 안의 소담은 공식 식음업장 정보에서 찾지 못했어요. 새로 생긴 곳일 수 있어서 프런트 확인이 필요해요.</li>
+      <li>같은 이름의 한식당이 소노캄 경주에 있어요(지하 1층). 석식 17:30~21:00, 라스트오더 20:30이고 대표 메뉴는 우삼겹 편백 해물찜(2인) 62,000원으로 안내돼요. 다른 지점 정보라 참고만 하세요.</li>
+      <li>소노캄 제주에는 셰프스키친 한식전문점이 있어요(웨스트 타워 5층 안내). 17:30~21:30, 라스트오더 21:00이고 문의는 064-780-7301이에요. 소담이 안 될 때의 대안이에요.</li>
+      <li>아기의자와 유모차 이동 가능 여부는 확인하지 못했어요.</li>
+    </ul></details><details><summary><span class="semo">🌙</span>1일차 야식 (20:30)</summary><ul>
+      <li>리조트 안내에 BBQ치킨(치킨&amp;PUB)이 11:00~22:00(홀 21:00, 포장 22:00까지)로 나와요. 베이커리 카페, 기념품숍, 편의점도 있다고 소개돼요.</li>
+      <li>편의점 운영시간은 안내에 없어요. 소노 공식 홈페이지에서 확인하라고 돼 있어요.</li>
+      <li>예약 사이트 안내에 취사 객실에서도 객실 안 육류, 튀김류, 생선류 조리는 금지라고 나와요. 야식은 포장하거나 완성된 음식 위주로 정하세요.</li>
+      <li>표선 지역 야간 배달 가능 여부는 확인하지 못했어요.</li>
+    </ul></details><details><summary><span class="semo">🥞</span>3일차 조식 뷔페 (08:00)</summary><ul>
+      <li>셰프스키친 조식뷔페예요. 웨스트 타워 5층, 07:00~10:30이고 문의는 064-780-7302예요.</li>
+      <li>요금은 어른 43,000원, 어린이(초등) 26,000원, 유아(36개월 이상~미취학) 17,000원이에요. 36개월 미만 요금은 안내에 없어서 확인이 필요해요.</li>
+      <li>사전예약 시 15% 할인이고, 이용일 기준 1일 전 22:00까지 프런트로 문의해야 해요. 3일차 이용이면 <b>11/28 22:00까지</b>예요.</li>
+    </ul><p class="note">근거: <a href="https://www.sonohotelsresorts.com/calm_jj/diningviewall/detail/DIN00000402" target="_blank" rel="noopener noreferrer">셰프스키친 조식뷔페(공식)</a> · <a href="https://www.sonohotelsresorts.com/calm_jj/restaurant/detail/DIN00000403" target="_blank" rel="noopener noreferrer">셰프스키친 한식전문점(공식)</a> · <a href="https://www.sonohotelsresorts.com/calm_gju/restaurant/detail/DIN00055119" target="_blank" rel="noopener noreferrer">소노캄 경주 한식당 소담</a> · <a href="https://www.yeogi.com/domestic-accommodations/8194" target="_blank" rel="noopener noreferrer">예약 사이트 안내(조리 금지)</a> · <a href="https://www.jeju.com/item/ld_view.html?agt=jeju&amp;prdno=AC913" target="_blank" rel="noopener noreferrer">부대시설 안내(BBQ치킨)</a></p></details></div>
+
+  <h2>🚑 아프거나 급할 때</h2>
+  <div class="ref"><details><summary><span class="semo">🚨</span>응급 상황</summary><ul>
+      <li>숨쉬기 힘들어하거나 늘어지고 반응이 없으면 바로 119에 연락하세요.</li>
+      <li>가까운 응급실과 야간 진료 기관은 응급의료포털(e-gen.or.kr)에서 지역을 골라 확인할 수 있어요.</li>
+    </ul></details><details><summary><span class="semo">🏥</span>표선 근처 소아청소년과</summary><ul>
+      <li>표선의원, 표선연세의원, 표선삼성의원, 표선하늘의원이 소아청소년과 진료과목으로 조회돼요.</li>
+      <li>진료시간은 공공데이터 기준이라 실제와 다를 수 있어요. 토·일 진료 여부는 가기 전에 전화로 확인하세요.</li>
+    </ul></details><details><summary><span class="semo">🌃</span>야간·휴일</summary><ul>
+      <li>서귀포 정방동의 우리들소아과의원이 달빛어린이병원으로 지정된 적이 있어요(2024년 기준 평일 14~23시, 토 10~21시).</li>
+      <li>지정 기간과 일요일 운영 여부는 바뀌었을 수 있으니 응급의료포털에서 현재 상태를 확인하세요. 표선에서 서귀포 시내까지 이동 시간도 지도 앱으로 확인해 두세요.</li>
+    </ul></details></div>
+  <div class="ref"><details><summary><span class="semo">🏥</span>집 소아과·약 정보</summary><ul><li>평소 다니는 소아과 연락처와 아기 해열제 용량 안내를 휴대폰에 저장해 두세요.</li></ul></details></div>
+</div>
+  <div id="sights"><h2 style="margin-top:38px">🗺️ 관광지 추천</h2>
+  
+  <p class="note">장소 이름을 누르면 자세한 정보가 펼쳐져요.</p>
+  <p class="note">7~8개월 아기, 11월 말 날씨(제주시 평균 약 11.5도에 바람이 센 편), 하루 5회 수유, 숙소에서 가까운 곳을 기준으로 골랐어요. 요금과 운영시간은 바뀔 수 있어서 방문 전에 확인하세요.</p>
+  <p class="note">날씨 근거: <a href="https://www.jeju.com/blog/jeju-november-weather-clothing" target="_blank" rel="noopener noreferrer">11월 제주 날씨와 옷차림</a></p>
+  <div id="sightList"><h2>🏖️ 숙소 안과 바로 근처</h2><details class="sight" id="sg-walk"><summary><span class="sg-name"><span class="semo">🌴</span>숙소 단지 정원 · 올레길 4코스 해변 산책로</span><span class="fit f-high">아기와 잘 맞아요</span><span class="sg-meta">숙소 · 야외 · 20~40분 · 무료</span></summary><div class="sg-body"><ul class="sg-facts"><li>소노캄 제주는 야외 정원과 인피니티풀, 올레길 4코스와 이어진 해변 산책로를 갖춘 리조트예요.</li><li>숙소에서 이어져 있어서 차를 탈 필요가 없고, 수유와 낮잠 시간에 맞춰 나갔다 들어오기 쉬워요.</li></ul><p><b>추천 이유</b> 비용이 들지 않고 아기 일과를 지키기 쉬워서 이번 여행의 기본 코스로 가장 잘 맞아요.</p><p class="sg-warn"><b>주의</b> 11월 말에는 바람이 세고 쌀쌀해요. 도톰한 겉옷과 모자를 챙기고 15~20분 안팎으로 짧게 걸어요.</p><p class="sg-links">근거: <a href="https://www.stayfolio.com/findstay/sono-calm-jeju-villa" target="_blank" rel="noopener noreferrer">소노캄 제주 빌라 소개(스테이폴리오)</a> · <a href="https://www.ajunews.com/view/20251130143505711" target="_blank" rel="noopener noreferrer">소노캄 제주 빌라 오픈 기사(아주경제)</a></p></div></details><details class="sight" id="sg-beach"><summary><span class="sg-name"><span class="semo">🌊</span>표선 해비치 해변</span><span class="fit f-mid">조건부로 좋아요</span><span class="sg-meta">숙소에서 차로 10분 이내 · 야외 · 무료</span></summary><div class="sg-body"><ul class="sg-facts"><li>예약 사이트 안내에 소노캄 제주에서 차로 10분 이내 거리에 표선 해비치 해변과 제주허브동산이 있다고 나와요.</li></ul><p><b>추천 이유</b> 바다를 잠깐 보고 오기에 가깝고 비용이 들지 않아요.</p><p class="sg-warn"><b>주의</b> 11월에는 해변 바람이 차요. 유모차로 모래 위를 가기 어려우니 아기띠를 쓰고 차에서 내려 잠깐만 보는 정도가 좋아요. 개장 시설이나 편의시설 정보는 확인하지 못했어요.</p><p class="sg-links">근거: <a href="https://www.waug.com/ko/accommodations/36992" target="_blank" rel="noopener noreferrer">소노캄 제주 정보(와그)</a></p></div></details><h2>🐠 가볍게 외출 · 성산 방면</h2><details class="sight" id="sg-aqua"><summary><span class="sg-name"><span class="semo">🐠</span>아쿠아플라넷 제주</span><span class="fit f-high">아기와 잘 맞아요</span><span class="sg-meta">성산 · 실내 · 관람 약 2시간 20분 · 성인 45,500원(현장)</span></summary><div class="sg-body"><ul class="sg-facts"><li>운영시간은 09:30~18:00이고 매표는 17:00, 입장은 17:30에 마감해요. 연중무휴로 안내돼요.</li><li>36개월 미만은 증빙서류를 지참하면 무료 입장이에요.</li><li>수유실이 2곳(입장 후 왼편 휴게실, 오션 아레나 공연장 오른쪽 끝)이고 기저귀 교환대와 아기의자가 있어요.</li><li>유모차 대여는 없지만 유모차로 이동은 가능해요(일부 경사 있음). 무료 주차장이 있어요.</li></ul><p><b>추천 이유</b> 실내라서 바람과 추위를 피할 수 있고 수유실이 갖춰져 있어서 이번 여행에서 가장 안정적인 외출지예요.</p><p class="sg-warn"><b>주의</b> 성인 요금이 높은 편이라 온라인 사전 예매 할인을 먼저 확인하세요. 아기 서류(주민등록등본 등)를 챙기고, 실내가 서늘하니 겉옷을 입혀요.</p><p class="sg-links">근거: <a href="https://m.visitjeju.net/kr/detail/view?contentsid=CONT_000000000500565" target="_blank" rel="noopener noreferrer">VisitJeju(공식)</a> · <a href="https://mom-mom.net/travel/places/62cd18072718fee95297db9a" target="_blank" rel="noopener noreferrer">맘맘 장소 정보</a> · <a href="https://korean.visitkorea.or.kr/detail/rem_detail.do?cotid=3b8205a3-5a85-4860-ac12-81c92a5d704b" target="_blank" rel="noopener noreferrer">36개월 미만 무료(대한민국 구석구석)</a></p></div></details><details class="sight" id="sg-seop"><summary><span class="sg-name"><span class="semo">🌬️</span>섭지코지</span><span class="fit f-mid">조건부로 좋아요</span><span class="sg-meta">성산 · 야외 · 산책 약 1시간 · 입장 무료</span></summary><div class="sg-body"><ul class="sg-facts"><li>입장은 무료이고 주차료만 내요(최초 30분 1,000원, 이후 15분당 500원, 하루 최대 3,000원).</li><li>해안 산책로는 1.2km이고 초반 30% 구간은 경사가 있고 나머지 70%는 평탄해요.</li><li>등대 전망대는 철계단 100단을 올라야 해서 유모차로는 갈 수 없어요.</li><li>산책로는 24시간 개방이고 연중무휴로 안내돼요. 표선 시내에서 해안도로를 따라 갈 수 있어요.</li></ul><p><b>추천 이유</b> 풍경이 좋고 비용 부담이 작아서 아쿠아플라넷 근처에 들를 만해요.</p><p class="sg-warn"><b>주의</b> 동부 해안은 평균 풍속이 초속 5~8m로 바람이 강하다고 해요. 11월 말에는 아기에게 춥기 쉬워서 전체를 걷기보다 10~20분만 걷고 컨디션을 보는 편이 좋아요.</p><p class="sg-links">근거: <a href="https://www.telltrip.com/domestic-travel/seopjikoji-jeju-coast-lighthouse-canola-flower/" target="_blank" rel="noopener noreferrer">섭지코지 소개(텔트립)</a></p></div></details><details class="sight" id="sg-ilchul"><summary><span class="sg-name"><span class="semo">🌅</span>성산일출봉</span><span class="fit f-mid">조건부로 좋아요</span><span class="sg-meta">성산 · 야외 · 정상 왕복 50분~1시간 / 무료 산책로 20~30분</span></summary><div class="sg-body"><ul class="sg-facts"><li>동절기(11~2월)는 06:00~18:00이고 매표는 17:00에 마감해요. 매달 첫째 월요일은 휴무이고 음식물 반입은 금지예요.</li><li>정상 탐방은 성인 5,000원이고 6세 미만은 무료로 안내돼요.</li><li>정상까지는 계단이 길어서 유모차가 안 되고 아기띠가 필요해요.</li><li>정상 탐방로 외에 우뭇개해안을 도는 무료 구간은 비교적 완만하고, 우뭇개 전망대까지 유모차로 갈 수 있다고 안내돼요.</li></ul><p><b>추천 이유</b> 아쿠아플라넷 바로 근처라서 14시 분유 후에 짧게 들러 볼 수 있어요.</p><p class="sg-warn"><b>주의</b> 11월 말 정상은 바람과 추위가 강할 수 있고 계단이 가팔라요. 8개월 아기와는 정상까지 오르기보다 무료 산책로에서 전망만 보는 쪽을 권해요(참고 의견).</p><p class="sg-links">근거: <a href="https://www.visitjeju.net/kr/detail/view?contentsid=CONT_000000000500349" target="_blank" rel="noopener noreferrer">VisitJeju(공식)</a> · <a href="https://www.korea-tripinfo.com/2026/07/vs.html" target="_blank" rel="noopener noreferrer">유료·무료 코스 비교</a> · <a href="https://jejudaily.com/guide/seongsan-ilchulbong-guide/" target="_blank" rel="noopener noreferrer">성산일출봉 가이드(제주데일리)</a></p></div></details><h2>🌿 표선 근처</h2><details class="sight" id="sg-herb"><summary><span class="sg-name"><span class="semo">🌿</span>제주허브동산</span><span class="fit f-mid">조건부로 좋아요</span><span class="sg-meta">표선 · 야외+실내 · 1~2시간 · 성인 12,000원(온라인 9,900원)</span></summary><div class="sg-body"><ul class="sg-facts"><li>운영시간은 09:00~22:00이고 입장은 21:00에 마감해요. 연중무휴로 안내돼요.</li><li>VisitJeju에 유모차와 휠체어 대여가 가능하다고 나와요.</li><li>수유실이 있지만 잠겨 있다는 주의 문구가 있어요. 출입구 단차가 있고 관람로에 4~10도 경사가 계속돼요.</li><li>소인 요금은 36개월 이상 기준(5,000원)이에요. 36개월 미만 요금은 확인하지 못했어요.</li></ul><p><b>추천 이유</b> 숙소에서 차로 10분 이내라 이동이 짧고, 허브 정원은 아기도 향기를 맡으며 둘러볼 수 있어요.</p><p class="sg-warn"><b>주의</b> 수유실이 잠겨 있을 수 있으니 수유는 차나 숙소에서 하는 계획이 안전해요. 야간 불빛 관람은 17시 이유식 시간과 겹쳐서 이번엔 낮에만 추천해요.</p><p class="sg-links">근거: <a href="https://www.visitjeju.net/kr/detail/view?contentsid=CONT_000000000500582" target="_blank" rel="noopener noreferrer">VisitJeju(공식)</a> · <a href="https://leisure-web.yanolja.com/leisure/10104367" target="_blank" rel="noopener noreferrer">요금 안내(야놀자 레저)</a></p></div></details><details class="sight" id="sg-folk"><summary><span class="sg-name"><span class="semo">🏘️</span>제주민속촌</span><span class="fit f-mid">조건부로 좋아요</span><span class="sg-meta">표선 · 야외 · 2시간 이상 · 성인 15,000원</span></summary><div class="sg-body"><ul class="sg-facts"><li>운영시간은 08:30~18:00(매표 마감은 폐장 1시간 전)이고 연중무휴예요. 겨울철에는 시간이 다르니 홈페이지 확인이 필요해요.</li><li>수유실과 기저귀 교환대가 있고 무료 주차장이 넓어요. 유모차 대여는 없어요.</li><li>면적이 넓어서 아이와 가면 유모차를 챙기라는 안내가 있어요. 순환버스가 20~30분 간격으로 다녀요.</li><li>영아 요금은 안내에 없어요(어린이 요금은 만 4세 이상 기준).</li></ul><p><b>추천 이유</b> 옛 제주 마을을 천천히 걷는 코스라서 유모차 산책에 좋고, 수유실도 있어요.</p><p class="sg-warn"><b>주의</b> 대부분 야외라 11월 말에는 바람과 추위가 변수예요. 2시간 이상 걸리므로 오전 수유 직후에 가서 14시 수유 전에 나오는 일정이 맞아요.</p><p class="sg-links">근거: <a href="https://mom-mom.net/travel/places/65b99ced8272e6a7542c2863" target="_blank" rel="noopener noreferrer">맘맘 장소 정보</a></p></div></details><details class="sight" id="sg-kids"><summary><span class="sg-name"><span class="semo">🧸</span>표선키즈몬(키즈카페)</span><span class="fit f-low">확인 후 결정</span><span class="sg-meta">표선 · 실내 · 1~2시간 · 성인 3,000원 / 어린이 1시간 7,000원</span></summary><div class="sg-body"><ul class="sg-facts"><li>금요일 12:00~20:00, 토·일 10:00~20:00에 운영하고 화요일은 정기 휴무예요.</li><li>수유실, 기저귀 교환대, 유아 화장실이 있다고 안내돼요.</li><li>대관 예약이 있으면 이용할 수 없어서 전화(064-787-2888)나 인스타그램으로 확인이 필요해요.</li></ul><p><b>추천 이유</b> 비가 오거나 바람이 센 날의 실내 대안이에요.</p><p class="sg-warn"><b>주의</b> 8개월 아기가 놀 수 있는 영아 구역이 있는지 안내에 없어요. 먼저 전화로 확인한 뒤 결정하세요.</p><p class="sg-links">근거: <a href="https://mom-mom.net/travel/places/65b99db60b9d17f0c81346f6" target="_blank" rel="noopener noreferrer">맘맘 장소 정보</a></p></div></details><details class="sight" id="sg-seong"><summary><span class="sg-name"><span class="semo">🏡</span>성읍민속마을</span><span class="fit f-low">확인 후 결정</span><span class="sg-meta">표선 · 야외 · 10:00~17:00</span></summary><div class="sg-body"><ul class="sg-facts"><li>실제로 주민이 사는 옛 제주 가옥이 보존된 마을로 소개돼요.</li><li>운영시간은 10:00~17:00이고 주차가 가능해요.</li></ul><p><b>추천 이유</b> 조용히 걷는 코스를 원할 때 후보가 돼요.</p><p class="sg-warn"><b>주의</b> 요금, 유모차 이동, 편의시설 정보를 확인하지 못했어요. 정보가 부족해서 이번 일정에서는 보류를 추천해요.</p><p class="sg-links">근거: <a href="https://mom-mom.net/travel/places/6684b1b91f2ab5106831e63f" target="_blank" rel="noopener noreferrer">맘맘 장소 정보</a></p></div></details></div>
+
+  <h2>💡 이렇게 묶으면 좋아요</h2>
+  <ul>
+    <li>2일차(확정): 오전에 아쿠아플라넷(실내)을 보고, 컨디션과 바람을 보며 성산일출봉 무료 산책로나 섭지코지를 10~20분만 걸어요.</li>
+    <li>대안(비가 오거나 컨디션이 안 좋은 날) 표선 근처에서 끝내기: 허브동산이나 민속촌 중 한 곳만 가고 일찍 숙소로 돌아와요.</li>
+  </ul>
+</div>
+  <p class="foot">🍊 즐거운 여행 되세요 🍊</p>
+</div>
+</body>
+</html>
